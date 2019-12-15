@@ -3,6 +3,7 @@ import 'package:learn_new_thing/Widgets/Head/main.dart';
 import 'package:learn_new_thing/Widgets/Popular/main.dart';
 import 'package:learn_new_thing/Widgets/Favourite/main.dart';
 import 'package:learn_new_thing/Widgets/Reading/main.dart';
+import 'package:learn_new_thing/Widgets/Detail/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        '/detail': (context) => Detail(),
+      },
     );
   }
 }

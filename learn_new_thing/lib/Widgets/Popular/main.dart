@@ -67,42 +67,47 @@ class CarouselBookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        child: Container(
-      child: Padding(
-        padding: EdgeInsets.all(8),
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image.network(
-              this.image,
-              height: 120.0,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              height: 40,
-              child: Text(
-                this.name,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 2,
-                style: TextStyle(fontWeight: FontWeight.bold),
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/detail');
+      },
+      child: Card(
+          child: Container(
+        child: Padding(
+          padding: EdgeInsets.all(8),
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Image.network(
+                this.image,
+                height: 120.0,
               ),
-            ),
-            SizedBox(
-              height: 4,
-            ),
-            Text(
-              this.author,
-              style: TextStyle(color: Colors.grey, fontSize: 12),
-            )
-          ],
+              SizedBox(
+                height: 8,
+              ),
+              Container(
+                height: 40,
+                child: Text(
+                  this.name,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Text(
+                this.author,
+                style: TextStyle(color: Colors.grey, fontSize: 12),
+              )
+            ],
+          ),
         ),
-      ),
-      width: 140,
-    ));
+        width: 140,
+      )),
+    );
   }
 }
 

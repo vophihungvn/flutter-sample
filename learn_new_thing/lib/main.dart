@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_new_thing/Widgets/Head/main.dart';
 import 'package:learn_new_thing/Widgets/Popular/main.dart';
+import 'package:learn_new_thing/Widgets/Favourite/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -43,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SafeArea(
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[Head(), Popular()],
+            children: <Widget>[Head(), Popular(), Favourite()],
           ),
         ),
       ),

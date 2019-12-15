@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_new_thing/Widgets/Head/main.dart';
 import 'package:learn_new_thing/Widgets/Popular/main.dart';
 import 'package:learn_new_thing/Widgets/Favourite/main.dart';
+import 'package:learn_new_thing/Widgets/Reading/main.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,9 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child: SafeArea(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[Head(), Popular(), Favourite()],
+          child: ListView(
+            shrinkWrap: true,
+            children: <Widget>[
+              Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[Head(), Popular(), Favourite(), Reading()],
+              )
+            ],
           ),
         ),
       ),

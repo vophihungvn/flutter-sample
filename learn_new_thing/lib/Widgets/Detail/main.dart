@@ -23,7 +23,10 @@ class Heading extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Icon(Icons.arrow_back),
+        GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Icon(Icons.arrow_back),
+        ),
         RaisedButton(
           onPressed: () {
             print("Press button");
@@ -107,13 +110,109 @@ class MainDetail extends StatelessWidget {
   }
 }
 
+class DescriptionSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(
+          height: 12,
+        ),
+        Text(
+          "Trong độ xuân xanh phơi phới ngày ấy, bạn không dám mạo hiểm, không dám nỗ lực để kiếm học bổng, không chịu tìm tòi những thử thách trong công việc, không phấn đấu hướng đến ước mơ của mình.",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+        ),
+        SizedBox(
+          height: 12,
+        ),
+        Text(
+            "Mơ mộng rằng khởi nghiệp xong sẽ lập tức nhận được tiền đầu tư, cầm được tiền đầu tư là sẽ niêm yết trên sàn chứng khoán. Mơ mộng rằng muốn gì sẽ có đó, không thiếu tiền cũng chẳng thiếu tình, an hưởng những năm tháng êm đềm trong cuộc đời mình. Nhưng vì sao bạn lại nghĩ rằng bạn chẳng cần bỏ ra chút công sức nào, cuộc sống sẽ dâng đến tận miệng những thứ bạn muốn? Bạn cần phải hiểu rằng: Hấp tấp muốn mau chóng thành công rất dễ khiến chúng ta đi vào mê lộ."),
+        SizedBox(
+          height: 16,
+        ),
+        Text(
+          "See more -----",
+          style: TextStyle(color: Color.fromRGBO(76, 95, 252, 0.85)),
+        )
+      ],
+    );
+  }
+}
+
+class Comment extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Row(mainAxisSize: MainAxisSize.max,
+            // crossAxisAlignment: CrossAxisAlignment.baseline,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Expanded(
+                child: Text("Comments (12)",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
+              ),
+              Text(
+                "View all",
+                style: TextStyle(color: Color.fromRGBO(76, 95, 252, 0.85)),
+              )
+            ]),
+        SizedBox(
+          height: 24,
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              child: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: NetworkImage(
+                      'https://i-giaitri.vnecdn.net/2018/03/01/shakira-7528-1519881179.jpg')),
+              width: 60.0,
+              height: 60.0,
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(14, 0, 14, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "Shakira Isabel Mebarak Ripoll",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 2,
+                    ),
+                    Text("Singer"),
+                    Text("Dec 14"),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                        "This is really a great book, I want to read another one like this, please recommend me!!")
+                  ],
+                ),
+              ),
+            )
+          ],
+        )
+      ],
+    );
+  }
+}
+
 class Detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 12.0),
+          padding: EdgeInsets.fromLTRB(20.0, 12.0, 20.0, 12.0),
           child: ListView(
             shrinkWrap: true,
             children: <Widget>[
@@ -130,8 +229,13 @@ class Detail extends StatelessWidget {
                   ),
                   Divider(
                     height: 12.0,
-                    thickness: 2.0,
-                  )
+                    thickness: 1.0,
+                  ),
+                  DescriptionSection(),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Comment()
                 ],
               )
             ],

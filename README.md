@@ -9,3 +9,8 @@ Repository for flutter UI samples. Please create an issue or make a PR if you ne
 
     Image:
     ![Learn new thing](images/app-for-learn-new-things-about-ux-daily-ui-challenge-large.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvophihungvn%2Fflutter-sample.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvophihungvn%2Fflutter-sample?ref=badge_shield)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvophihungvn%2Fflutter-sample.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvophihungvn%2Fflutter-sample?ref=badge_large)
